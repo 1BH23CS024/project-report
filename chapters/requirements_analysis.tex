@@ -1,38 +1,65 @@
-\chapter{REQUIREMENTS AND ANALYSIS}
-The requirements analysis for the VeerDrishti combat vision system encompasses a comprehensive evaluation of functional and non-functional requirements, ensuring that the system meets the operational needs of modern warfare while adhering to technical constraints. The analysis is structured to identify key features, performance metrics, and user interactions necessary for the successful deployment of the system in dynamic battlefield environments.
+\chapter{REQUIREMENTS AND ANALYSIS}\label{ch:requirements}
+The requirements analysis for the VeerDrishti combat vision system encompasses a comprehensive
+evaluation of functional and non-functional requirements, ensuring that the system meets the
+operational needs of modern warfare while adhering to technical constraints. The analysis is
+structured to identify key features, performance metrics, and user interactions necessary for the
+successful deployment of the system in dynamic battlefield environments.
 
-\section{Functional Requirements}
+\section{Functional Requirements}\label{sec:functional}
 The functional requirements define the core capabilities of the project, including:
 \begin{enumerate}[label=\roman*.]
-    \item \textbf{Real-Time Object Detection:} The system must be capable of detecting and classifying combatants, vehicles, and weapons in real time using the integrated camera feed.
-    \item \textbf{Visual Highlighting:} Detected threats should be visually highlighted on the display interface, providing clear and immediate feedback to the user.
-    \item \textbf{Open Vocabulary Recognition:} The system should be able to identify novel or previously unseen threats using natural language supervision and language-vision encoders.
-    \item \textbf{User Interface:} The system must provide an intuitive user interface that allows easy interpretation of the visual information to make informed decisions without distraction.
-    \item \textbf{Data Logging:} The system must provide secure local storage of detection events and video metadata for post-mission analysis and system auditing.
+  \item \textbf{Real-Time Object Detection:} The system must be capable of detecting and classifying
+    combatants, vehicles, and weapons in real time using the integrated camera feed.
+  \item \textbf{Visual Highlighting:} Detected threats should be visually highlighted on the display
+    interface, providing clear and immediate feedback to the user.
+  \item \textbf{Open Vocabulary Recognition:} The system should be able to identify novel or
+    previously unseen threats using natural language supervision and language-vision encoders.
+  \item \textbf{User Interface:} The system must provide an intuitive user interface that allows
+    easy interpretation of the visual information to make informed decisions without distraction.
+  \item \textbf{Data Logging:} The system must provide secure local storage of detection events and
+    video metadata for post-mission analysis and system auditing.
+  \label{end:functional}
 \end{enumerate}
-
-\section{Non-Functional Requirements}
-The non-functional requirements address the performance, reliability, and usability aspects of the project, including:
+\section{Non-Functional Requirements}\label{sec:nonfunctional}
+The non-functional requirements address the performance, reliability, and usability aspects of the
+project, including:
 \begin{enumerate}[label=\roman*.]
-    \item \textbf{Low Latency:} The system must operate with minimal latency to ensure timely threat detection and response in high-stress combat scenarios.
-    \item \textbf{Robustness:} The system should maintain high detection accuracy under varying environmental conditions, such as low light, occlusion, and dynamic backgrounds.
-    \item \textbf{Scalability:} The system should be designed to accommodate future enhancements, such as additional threat categories or integration with other battlefield systems.
-    \item \textbf{Security:} The system must ensure the confidentiality and integrity of the data collected, preventing unauthorized access and ensuring compliance with military data handling standards.
-    \item \textbf{Usability:} The system should be user-friendly, requiring minimal training for effective operation, and should not contribute to cognitive overload for the user.
+  \item \textbf{Low Latency:} The system must operate with minimal latency to ensure timely threat
+    detection and response in high-stress combat scenarios.
+  \item \textbf{Robustness:} The system should maintain high detection accuracy under varying
+    environmental conditions, such as low light, occlusion, and dynamic backgrounds.
+  \item \textbf{Scalability:} The system should be designed to accommodate future enhancements, such
+    as additional threat categories or integration with other battlefield systems.
+  \item \textbf{Security:} The system must ensure the confidentiality and integrity of the data
+    collected, preventing unauthorized access and ensuring compliance with military data handling
+    standards.
+  \item \textbf{Usability:} The system should be user-friendly, requiring minimal training for
+    effective operation, and should not contribute to cognitive overload for the user.
+  \label{end:nonfunctional}
 \end{enumerate}
-
-\section{Hardware Requirements}
+\section{Hardware Requirements}\label{sec:hardware}
 \begin{enumerate}[label=\roman*.]
-    \item \textbf{Development Workstation:} High-performance laptop equipped with a dedicated GPU for code development, dataset preprocessing, and initial model debugging.
-    \item \textbf{Edge Deployment Device:} High-end smartphone with an integrated Neural Processing Unit (NPU) to host the prototype application and execute real-time local inference.
-    \item \textbf{Cloud Training Infrastructure:} Scalable cloud-based GPU instances utilized for training complex deep learning architectures and performing large-scale hyperparameter optimization.
+  \item \textbf{Development Workstation:} High-performance laptop equipped with a dedicated GPU for
+    code development, dataset preprocessing, and initial model debugging.
+  \item \textbf{Edge Deployment Device:} High-end smartphone with an integrated Neural Processing
+    Unit (NPU) to host the prototype application and execute real-time local inference.
+  \item \textbf{Cloud Training Infrastructure:} Scalable cloud-based GPU instances utilized for
+    training complex deep learning architectures and performing large-scale hyperparameter
+    optimization.
+  \label{end:hardware}
 \end{enumerate}
-
-\section{Software Requirements}
-\begin{enumerate}[label=\roman*.]
-    \item \textbf{Operating System:} Linux distribution like Ubuntu 26.04 LTS with stable CUDA support.
-    \item \textbf{Programming Languages:} Python 3.10+ for model development, Rust for high performance edge execution and Kotlin for mobile application development.
-    \item \textbf{IDE/Tools:} VS Code, Jupyter Notebooks for experimentation, and Git for version control.
-    \item \textbf{Core Framework:} PyTorch 2.0+ or TensorFlow 2.x (primarily PyTorch for YOLO implementation).
+\section{Software Requirements}\label{sec:software}
+\begingroup\emergencystretch=3em
+  \begin{enumerate}[label=\roman*.]
+    \item \textbf{Operating System:} Linux distribution like Ubuntu 26.04 LTS with stable CUDA/ROS
+      support.
+    \item \textbf{Programming Languages:} Python 3.9+ for model development, Rust for
+      high-performance edge execution and Kotlin for mobile application development.
+    \item \textbf{IDE/Tools:} VS Code, Jupyter Notebooks for experimentation, and Git for version
+      control.
+    \item \textbf{Core Framework:} PyTorch 2.0+ or TensorFlow 2.x (primarily PyTorch for YOLOv8/v10
+      implementation).
     \item \textbf{Cloud Platform:} Google Cloud Vertex AI or AWS EC2 for large-scale model training.
-\end{enumerate}
+  \end{enumerate}
+\endgroup
+\label{end:software}\label{end:requirements}

@@ -1,87 +1,76 @@
-\chapter{SCHEDULING}
+\chapter{SCHEDULING}\label{ch:scheduling}
 
-\section{GANTT Chart}
+\section{Gantt Chart}\label{sec:gantt}
 \begin{figure}[h]
-    \centering
-    \begin{ganttchart}[
-            hgrid,
-            vgrid,
-            x unit=0.57\linewidth/16,
-            title height=1
-        ]{1}{20}
+  \centering
+  \begin{ganttchart}[
+    hgrid,
+    vgrid,
+    x unit=0.57\linewidth/16,
+    title height=1
+  ]{1}{20}
 
-        \gantttitle{January}{4}
-        \gantttitle{February}{4}
-        \gantttitle{March}{4}
-        \gantttitle{April}{4}
-        \gantttitle{May}{4} \\
+    \gantttitle{January}{4}
+    \gantttitle{February}{4}
+    \gantttitle{March}{4}
+    \gantttitle{April}{4}
+    \gantttitle{May}{4} \\
 
-        \foreach \x in {1,...,5} {
-                \gantttitlelist{1,...,4}{1}
-            } \\
+    \foreach \x in {1,...,5} {
+      \gantttitlelist{1,...,4}{1}
+    } \\
 
-        \ganttbar[bar/.style={fill=violet, draw=black}]{Literature Survey}{3}{5} \\
-        \ganttbar[bar/.style={fill=blue, draw=black}]{Base Paper Selection}{5}{6} \\
-        \ganttbar[bar/.style={fill=green, draw=black}]{Supp. Papers Selection}{7}{13} \\
-        \ganttbar[bar/.style={fill=yellow, draw=black}]{Report Drafting}{12}{15} \\
-        \ganttbar[bar/.style={fill=orange, draw=black}]{Report Finalization}{16}{16} \\
-        \ganttbar[bar/.style={fill=red, draw=black}]{Report Submission}{17}{18}
-    \end{ganttchart}
+    \ganttbar[bar/.style={fill=violet!66, draw=black}]{Literature Survey}{3}{5} \\
+    \ganttbar[bar/.style={fill=blue!66, draw=black}]{Base Paper Selection}{5}{6} \\
+    \ganttbar[bar/.style={fill=green!66, draw=black}]{Supp. Papers Selection}{7}{13} \\
+    \ganttbar[bar/.style={fill=yellow!66, draw=black}]{Report Drafting}{12}{15} \\
+    \ganttbar[bar/.style={fill=orange!66, draw=black}]{Report Finalization}{16}{16} \\
+    \ganttbar[bar/.style={fill=red!66, draw=black}]{Report Submission}{17}{18}
+  \end{ganttchart}
 
-    \caption{GANTT Chart for Major Project (Phase-1)}
+  \caption{Gantt Chart for Major Project (Phase-1)}\label{fig:gantt}
 \end{figure}
 
-The fig. 5.1 represents the timeline for the Major Project (Phase-1). The project follows a well-structured and systematic timeline spanning from January to May, ensuring that each stage is completed in a sequential and organized manner. The initial phase of the project begins in the second week of January with a three-week Literature Survey, which continues steadily and concludes in early February. This stage establishes the research background and provides the necessary understanding for the subsequent activities. Immediately after this, the Base Paper Selection phase is carried out during the first two weeks of February, allowing the project to identify the primary reference work for further study and implementation. Supporting Papers Selection forms the longest and most extensive research block in the schedule. This phase begins in late February and extends continuously through the end of April, reflecting the importance of gathering and analyzing additional research materials relevant to the project topic. As the research work approaches completion, the Report Drafting phase starts in early April and continues for three weeks, focusing on organizing and documenting the findings systematically. The final stages are closely scheduled in May. Report Finalization takes place during the first week, followed by the final Report Submission in the second week of the month. This sequential and carefully planned approach ensures a rigorous research foundation before the final documentation is completed and formally submitted.
+The project follows a structured timeline spanning from January to May. The initial phase begins in
+the second week of January with a three-week Literature Survey, which concludes in early February.
+This is immediately followed by the Base Paper Selection, spanning the first two weeks of February.
+Supporting Papers Selection constitutes the longest research block, starting in late February and
+continuing through the end of April. As research nears completion, Report Drafting commences in
+early April and runs for three weeks. The final stages are tightly scheduled in May, with Report
+Finalization occurring in the first week, followed by the final Report Submission during the second
+and third weeks of the month. This sequential approach ensures a rigorous foundation of research
+before the final documentation is prepared and delivered.
 
-\section{Month-wise Progress}
-The project timeline spans from January to May 2026, transitioning from initial literature research to final documentation. The month-wise progress details are as follows:
+\label{end:gantt}
+\section{Month-wise Progress}\label{sec:progress}
+The project timeline spans from January to May 2026, transitioning from initial literature research
+to final documentation. The month-wise progress details are as follows:
 
-\renewcommand{\arraystretch}{1.5}
-\begin{center}
-    \begin{longtable}{
-        |>{\centering\arraybackslash}m{1.22cm}
-        |>{\raggedright\arraybackslash}m{2.5cm}
-        |>{\raggedright\arraybackslash}m{10.1cm}|
-        }
+\subsection{January}
+Conducted a comprehensive literature survey to identify relevant research papers and technologies in
+the domain of real-time combat vision systems. Identified research papers that could serve as the
+base paper and foundation for our project.
 
-        \caption{Month-wise Progress}                                                                                                                                                                                                                                                                                                                    \\
+\subsection{February}
+Selected the base paper and conducted extensive reading and analysis to understand the current state
+of the art, identify gaps in existing solutions, and select a base paper that aligns with our
+project objectives.
 
-        \hline
-        \textbf{Sl. No.} & \textbf{Month} & \textbf{Progress Details}                                                                                                                                                                                                                                                                                    \\
-        \hline
-        \endfirsthead
+\subsection{March}
+Selected 10 supplementary papers that provide additional insights, methodologies, and technologies
+relevant to our project. These papers contribute to the development of our combat vision system by
+providing a broader understanding of the field and potential approaches to implementation. Began
+intial work to draft the project report.
 
-        \hline
-        \textbf{Sl. No.} & \textbf{Month} & \textbf{Progress Details}                                                                                                                                                                                                                                                                                    \\
-        \hline
-        \endhead
-        \endlastfoot
+\subsection{April}
+Drafted the project report, synthesizing information from the base paper and supplementary papers.
+Structured the report to clearly articulate the project details and specifications. Iteratively
+refined the report based on feedback and additional insights gained during the drafting process and
+drafted the final project report.
 
-        1                &
-        January          &
-        Conducted a comprehensive literature survey to identify relevant research papers and technologies in the domain of real-time combat vision systems. Identified research papers that could serve as the base paper and foundation for our project.                                                                                                \\
-        \hline
-
-        2                &
-        February         &
-        Selected the base paper and conducted extensive reading and analysis to understand the current state of the art, identify gaps in existing solutions, and select a base paper that aligns with our project objectives.                                                                                                                           \\
-        \hline
-
-        3                &
-        March            &
-        Selected 10 supplementary papers that provide additional insights, methodologies, and technologies relevant to our project. These papers contribute to the development of our combat vision system by providing a broader understanding of the field and potential approaches to implementation. Began initial work to draft the project report. \\
-        \hline
-
-        4                &
-        April            &
-        Drafted the project report, synthesizing information from the base paper and supplementary papers. Structured the report to clearly articulate the project details and specifications. Iteratively refined the report based on feedback and additional insights gained during the drafting process and drafted the final project report.         \\
-        \hline
-
-        5                &
-        May              &
-        Submitted the finalized project report, ensuring that all sections are complete, well-organized, and adhere to the required guidelines.                                                                                                                                                                                                          \\
-        \hline
-    \end{longtable}
-\end{center}
-
-\vspace{-36pt}The table 5.1 represents the month-wise progress of the Major Project (Phase-1).
+\subsection{May}
+\begingroup\emergencystretch=2em
+  Submitted the finalized project report, ensuring that all sections are complete, well-organized,
+  and adhere to the required guidelines.
+  \label{end:progress}\label{end:scheduling}
+\par\endgroup

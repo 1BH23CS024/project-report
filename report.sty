@@ -1,0 +1,176 @@
+\ProvidesPackage{report}[2026/10/04 VeerDrishti reference report layout]
+
+% Packages and document typography.
+\RequirePackage[backend=biber,style=ieee]{biblatex}
+\RequirePackage[top=.75in,bottom=.75in,left=1.25in,right=1in,includehead]{geometry}
+\RequirePackage{array,booktabs,caption,enumitem,etoolbox,fancyhdr,fontspec,graphicx,
+  longtable,pgfgantt,refcount,setspace,tikz,titlesec,xcolor}
+\RequirePackage[hidelinks]{hyperref}
+\usetikzlibrary{calc}
+\setmainfont{Times New Roman}
+\hypersetup{
+  pdftitle={VeerDrishti: Combat Vision System — Major Project Phase-I Report},
+  pdfauthor={Gaurav Chauhan and Gaurav Singh}
+}
+\addbibresource{references.bib}
+\captionsetup[table]{skip=12pt}
+\setlist[enumerate]{label=\roman*.}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+
+% Original headheight + headsep = 24pt; reserve 17pt for its double-rule header.
+\setlength{\headheight}{17pt}
+\setlength{\headsep}{7pt}
+\setlength{\footskip}{24pt}
+
+% Body-page running header and footer.
+\fancypagestyle{report}{%
+  \fancyhf{}
+  \fancyhead[L]{\fontsize{12pt}{0pt}\textbf{VeerDrishti: Combat Vision System}}
+  \fancyhead[R]{\fontsize{12pt}{0pt}\textbf{2025--2026}}
+  \fancyfoot[L]{\fontsize{12pt}{0pt}\textbf{Dept. of CSE, BTI, Bengaluru}}
+  \fancyfoot[R]{\fontsize{12pt}{0pt}\textbf{\thepage}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrule}{{\color{red}\hrule height1pt\vskip1pt\hrule height.5pt}}
+\renewcommand{\footrule}{{\color{red}\hrule height.5pt\vskip1pt\hrule height1pt}}
+
+% Heading hierarchy and spacing.
+\titleformat{\chapter}[display]{}%
+  {\fontsize{16pt}{0pt}\selectfont\bfseries\chaptername\ \thechapter}{0pt}%
+  {\centering\fontsize{18pt}{0pt}\selectfont\bfseries}
+\titleformat{\section}{\fontsize{16pt}{0pt}\selectfont\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\fontsize{14pt}{14pt}\selectfont\bfseries}{\thesubsection}{1em}{}
+\titlespacing{\chapter}{0pt}{-12pt}{12pt}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{report}}{}{}
+
+% Put hyperlink anchors inside the heading line, after any automatic page break.
+\makeatletter
+% The current LaTeX kernel creates targets directly, bypassing titlesec's old hook.
+\def\ttl@Hy@refstepcounter#1{%
+  \H@refstepcounter{#1}\hyper@makecurrent{#1}%
+  \def\ttl@Hy@saveanchor{\MakeLinkTarget{#1}}
+}
+\let\report@anchor\@empty
+\patchcmd{\ttl@select}{\ttl@Hy@saveanchor}{\global\let\report@anchor\ttl@Hy@saveanchor}{}%
+  {\PackageError{report}{Cannot defer heading anchors}{Check the titlesec version.}}
+\pretocmd{\ttl@strut}{\report@anchor\global\let\report@anchor\@empty}{}{}
+\makeatother
+
+% Front matter is a measured, editable transcription of the Word-format pages.
+% Coordinates are PDF points (bp), measured from the top-left of A4.
+% Fixed artwork/headings preserve the college template; prose uses paragraph blocks.
+\newenvironment{frontpage}{%
+  \null\phantomsection
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[line width=3bp] ($(current page.north west)+(67bp,-41.05bp)$)
+      rectangle ($(current page.north west)+(546.5bp,-819.01bp)$);
+    \draw[line width=.72bp] ($(current page.north west)+(69.58bp,-43.63bp)$)
+      rectangle ($(current page.north west)+(543.92bp,-816.43bp)$);
+}{%
+  \end{tikzpicture}\clearpage
+}
+
+\newsavebox{\frontlinebox}
+\newcommand{\FrontLineRaw}[5]{%
+  \node[anchor=base west,inner sep=0pt,outer sep=0pt]
+    at ($(current page.north west)+(#1bp,-#2bp)$)
+    {\fontsize{#4bp}{#4bp}\selectfont\hbadness=10000
+      \ifdim#3bp=0bp\makebox[0pt][l]{#5}\else
+        \sbox{\frontlinebox}{#5}%
+        \ifdim\wd\frontlinebox>#3bp
+          \resizebox{#3bp}{\height}{\usebox{\frontlinebox}}%
+        \else
+          \spaceskip=.25em plus1fil\makebox[#3bp][s]{#5}%
+        \fi
+      \fi};
+}
+
+% First-line baseline in bp; normal 12pt text with 18pt (1.5) line spacing.
+\newcommand{\FrontParagraphRaw}[2]{%
+  \node[anchor=base west,inner sep=0pt,outer sep=0pt]
+    at ($(current page.north west)+(90bp,-#1bp)$)
+    {\begin{minipage}[t]{\textwidth}
+      \setstretch{1}\fontsize{12pt}{18pt}\selectfont
+      \setlength{\parskip}{8pt}\emergencystretch=2em
+      #2\par
+    \end{minipage}};
+}
+
+\newcommand{\FrontImage}[5]{%
+  \node[anchor=north west,inner sep=0pt,outer sep=0pt]
+    at ($(current page.north west)+(#1bp,-#2bp)$)
+    {\includegraphics[width=#3bp,height=#4bp]{#5}};
+}
+\newcommand{\FrontRect}[5]{%
+  \draw[line width=#5bp] ($(current page.north west)+(#1bp,-#2bp)$)
+    rectangle ($(current page.north west)+(#3bp,-#4bp)$);
+}
+\newcommand{\FrontRuleRaw}[4]{%
+  \fill ($(current page.north west)+(#1bp,-#2bp)$)
+    rectangle ($(current page.north west)+(#3bp,-#4bp)$);
+}
+
+% Front-page source files use named placements.  The measured coordinates live
+% in front_layout.tex so content edits do not have to carry layout data.
+\newcommand{\FrontLine}[2]{\csname front@line@#1\endcsname{#2}}
+\newcommand{\FrontParagraph}[2]{\csname front@paragraph@#1\endcsname{#2}}
+\newcommand{\FrontRule}[1]{\csname front@rule@#1\endcsname}
+\newcommand{\FrontPageTwoContents}{%
+  \renewcommand{\ContentsTitleX}{164.78}%
+  \renewcommand{\ContentsNumberX}{119.90}%
+}
+
+% Artwork placements live here so the page sources do not need image coordinates.
+\newcommand{\CoverArtwork}{%
+  \FrontImage{280.15}{121.75}{49.40}{62.12}{images/vtu-logo.jpeg}%
+  \FrontImage{101.46}{578.02}{411.96}{47.18}{images/bti-banner.png}%
+  \FrontRect{91.78}{569.69}{523.10}{628.04}{0.75}%
+}
+\newcommand{\CertificateArtwork}{%
+  \FrontImage{100.77}{69.26}{412.26}{81.95}{images/bti-banner.png}%
+  \FrontRect{91.07}{55.07}{522.72}{155.87}{0.75}%
+}
+\newcommand{\DeclarationArtwork}{%
+  \FrontImage{90}{69.20}{436.54}{104.48}{images/bti-letterhead.png}%
+  \FrontRect{91.10}{68.82}{525.32}{170.22}{0.75}%
+}
+\newcommand{\InstituteArtwork}{%
+  \FrontImage{102.02}{69.39}{414.73}{82.44}{images/bti-banner.png}%
+  \FrontRect{92.28}{55.12}{526.49}{156.52}{0.75}%
+}
+\newcommand{\ProgramArtwork}{%
+  \FrontImage{102.02}{64.75}{414.73}{82.44}{images/bti-banner.png}%
+  \FrontRect{92.28}{50.47}{526.49}{151.87}{0.75}%
+}
+\newcommand{\OutcomesArtwork}{%
+  \FrontImage{106.99}{66.14}{409.08}{63.43}{images/bti-banner.png}%
+  \FrontRect{97.38}{55.07}{525.70}{133.27}{0.75}%
+}
+\newcommand{\SpecificOutcomesArtwork}{%
+  \FrontImage{102.02}{68.48}{414.52}{82.40}{images/bti-banner.png}%
+  \FrontRect{92.28}{54.21}{526.29}{155.56}{0.75}%
+}
+
+% Custom contents rows resolve their numbers, titles and page ranges from labels.
+\newcommand{\PageRange}[2]{%
+  \begingroup
+    \edef\firstpage{\getpagerefnumber{#1}}%
+    \edef\lastpage{\getpagerefnumber{#2}}%
+    \pageref{#1}\ifx\firstpage\lastpage\else--\pageref{#2}\fi
+  \endgroup
+}
+\newcommand{\ContentsTitleX}{156.14}
+\newcommand{\ContentsNumberX}{117.86}
+\newcommand{\ContentsRow}[3]{%
+  \FrontLineRaw{\ContentsTitleX}{\ContentsY{#1}}{0}{12}{\ref{#2}\ \nameref{#2}}%
+  \FrontLineRaw{456.34}{\ContentsY{#1}}{30}{12}{\hfill\PageRange{#2}{#3}\hfill}%
+}
+\newcommand{\ContentsChapter}[3]{%
+  \FrontLineRaw{\ContentsNumberX}{\ContentsY{#1}}{0}{12}{\textbf{\ref{#2}}}%
+  \FrontLineRaw{\ContentsTitleX}{\ContentsY{#1}}{0}{12}{\textbf{\nameref{#2}}}%
+  \FrontLineRaw{456.34}{\ContentsY{#1}}{30}{12}{\hfill\textbf{\PageRange{#2}{#3}}\hfill}%
+}
+
+\input{front_layout}
