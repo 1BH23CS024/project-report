@@ -1,89 +1,41 @@
-\documentclass[12pt, a4paper]{report}
+\documentclass[12pt,a4paper]{report}
+\usepackage{report}
 
-\usepackage[backend=biber, style=ieee]{biblatex}
-\usepackage[top=0.75in, bottom=0.75in, left=1.25in, right=1in, includehead]{geometry}
-\usepackage{array, booktabs, caption, enumitem, etoolbox, fancyhdr, fontspec, graphicx, longtable, pgfgantt, setspace, titlesec}
-\usepackage[dvipsnames]{xcolor}
-
-% import references
-\addbibresource{references.bib}
-
-% adjust caption formatting
-\captionsetup[table]{skip=12pt}
-\captionsetup[figure]{name=Fig.}
-
-% enumerate with roman numerals
-\setlist[enumerate]{label=\roman*.}
-
-% set header and footer
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\fontsize{12pt}{0em}\textbf{VeerDrishti: Combat Vision System}}
-\fancyhead[R]{\fontsize{12pt}{0em}\textbf{2025--2026}}
-\fancyfoot[L]{\fontsize{12pt}{0em}\textbf{Department of CSE, BTI, Bengaluru -- 35}}
-\fancyfoot[R]{\fontsize{12pt}{0em}\textbf{\thepage}}
-
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-\makeatletter
-\renewcommand{\headrule}{
-  \color{Maroon}
-  \hrule height 2.5pt
-  \vskip 1pt 
-  \hrule height 0.5pt
-}
-\renewcommand{\footrule}{{
-  \color{Maroon}
-  \hrule height 0.5pt
-  \vskip 1pt
-  \hrule height 2.5pt
-}}
-\makeatother
-
-% adjust text formatting
-\onehalfspacing
-\setlength{\headsep}{12pt}
-\setlength{\footskip}{24pt}
-\setlength{\parindent}{0em}
-\setmainfont{Times New Roman}
-
-% adjust heading formatting
-\titleformat{\chapter}[display]
-  {}
-  {\fontsize{14pt}{0em}\selectfont\bfseries\chaptername\ \thechapter}
-  {0em}
-  {\centering \fontsize{18pt}{0em}\selectfont\bfseries}
-  
-  \titleformat{\section}
-  {\fontsize{16pt}{0em}\selectfont\bfseries}
-  {\thesection}
-  {1em}
-  {}
-  
-  \titleformat{\subsection}
-  {\fontsize{14pt}{14pt}\selectfont\bfseries}
-  {\thesubsection}
-  {1em}
-  {}
- 
-% adjust chapter spacing 
-\titlespacing{\chapter}{0em}{-12pt}{12pt}
-\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
-
-% adjust table of contents formatting
-\renewcommand{\contentsname}{TABLE OF CONTENTS}
-
-% document content
 \begin{document}
+  % Cover and signature pages have no printed page numbers.
+  \pagestyle{empty}
+  \hypersetup{pageanchor=false}
+  \input{sections/01_titlepage}
+  \input{sections/02_certificate}
+  \input{sections/03_declaration}
+  % Preliminary pages use Roman numbering.
+  \pagenumbering{roman}
+  \pagestyle{plain}
+  \input{sections/04_acknowledgement}
+  \input{sections/05_abstract}
+  \input{sections/06_institute}
+  \input{sections/07_program}
+  \input{sections/08_outcomes}
+  \input{sections/09_specific_outcomes}
+  \input{sections/10_contents}
+  \input{sections/11_figures}
+  \input{sections/12_tables}
 
-\include{chapters/introduction}
-\include{chapters/literature_survey}
-\include{chapters/requirements_analysis}
-\include{chapters/system_design}
-\include{chapters/scheduling}
-\include{chapters/conclusion}
-
-\printbibliography[heading=bibintoc, title={REFERENCES}]
-
+  % Body chapters and references use Arabic numbering.
+  \pagenumbering{arabic}
+  \hypersetup{pageanchor=true}
+  \pagestyle{report}
+  \input{chapters/introduction}
+  \input{chapters/literature_review}
+  \input{chapters/requirements_analysis}
+  \input{chapters/system_design}
+  \input{chapters/scheduling}
+  \input{chapters/conclusion}
+  \defbibheading{bibintoc}[REFERENCES]{%
+    \chapter*{#1}\addcontentsline{toc}{chapter}{#1}\label{ch:references}}
+  \begingroup
+    \emergencystretch=2em
+    \printbibliography[heading=bibintoc,title={REFERENCES}]
+    \label{end:references}
+  \endgroup
 \end{document}

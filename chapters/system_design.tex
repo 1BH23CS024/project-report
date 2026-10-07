@@ -1,28 +1,36 @@
-\chapter{SYSTEM DESIGN}
+\chapter{SYSTEM DESIGN}\label{ch:design}
 
-\section{System Architecture}
+\section{System Architecture}\label{sec:architecture}
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{images/architecture.png}
-    \caption{System Architecture}
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/architecture.png}
+  \caption{System Architecture}\label{fig:architecture}
 \end{figure}
 
-The fig. 4.1 represents the tentative system architecture of the VeerDrishti project. The system architecture designed for the project is organized into six distinct and interconnected layers that collectively facilitate a smooth and continuous flow of data from the initial capture stage to the final storage stage. The architecture begins with the Input Layer, which is responsible for capturing real-time video footage and supplying the raw visual data required for further analysis and processing. This raw input data is then transferred to the Preprocessing Layer, where several enhancement operations are performed, including image resizing, alignment, and noise reduction, in order to improve image clarity and ensure that the data is suitable for accurate analysis. \vspace{6pt}
+The system architecture for the project is structured into six distinct layers that facilitate a
+smooth data flow from capture to storage. It begins with the Input Layer, which is responsible for
+capturing real-time video footage. This raw data is then passed to the Preprocessing Layer, where
+images are resized, aligned, and noise is reduced to ensure clarity for analysis. The Processing
+Layer serves as the core intelligence hub, detecting objects and recognizing specific scenarios,
+followed by the Post-Processing Layer, which filters these detections and classifies potential
+threats. Finally, the User Interface Layer provides an interactive experience by displaying an AR
+overlay of the results, while the Storage Layer logs all detection data and metadata for future
+reference.
 
-\hspace{3em} The Processing Layer acts as the core intelligence hub of the entire system architecture. In this layer, objects are detected and specific scenarios are recognized using the processed visual information. Once the detections are completed, the data moves to the Post-Processing Layer, where the identified detections are filtered and further classified to determine potential threats and improve the reliability of the results. \vspace{6pt}
-
-\hspace{3em} Finally, the User Interface Layer provides an interactive user experience by displaying an AR overlay containing the processed results and detections in a visually accessible manner. Alongside this, the Storage Layer maintains logs of all detection data and related metadata, ensuring that the information is preserved for future reference, analysis, and system evaluation.
-
-\section{System Workflow}
+\label{end:architecture}
+\section{System Workflow}\label{sec:workflow}
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{images/workflow.png}
-    \caption{System Workflow}
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/workflow.png}
+  \caption{System Workflow}\label{fig:workflow}
 \end{figure}
 
-The fig. 4.2 represents the tentative system workflow of the VeerDrishti project. The workflow is designed as a continuous and systematic loop that supports real-time monitoring and enables rapid response during operation. Upon initiation, the system begins by capturing live RGB video footage, which serves as the primary source of input for further processing and analysis. Immediately after capture, the video feed undergoes preprocessing operations such as denoising and normalization in order to improve image quality and maintain consistency for accurate detection. \vspace{6pt}
-
-\hspace{3em} Once preprocessing is completed, the AI Detection Engine analyzes the video feed to identify combatants, weapons, or vehicles present within the monitored environment. This stage acts as the core analytical component of the workflow, enabling the system to process visual data continuously and identify relevant objects or scenarios in real time. The workflow then reaches a critical decision point where the system determines whether a threat has been detected or not. \vspace{6pt}
-
-\hspace{3em} If a threat is identified, the system responds by applying bounding boxes around the detected objects, highlighting the danger through AR visualization, alerting the user, and logging the corresponding detection data for future reference. On the other hand, if no threat is detected, the system continues its monitoring cycle without interruption and returns to the capture stage.
+The workflow follows a continuous loop designed for real-time monitoring and rapid response. Upon
+initiation, the system captures live RGB video and immediately subjects it to preprocessing steps
+like denoising and normalization. The AI Detection Engine then analyzes the feed to identify
+combatants, weapons, or vehicles. This leads to a critical decision point: if a threat is detected,
+the system applies bounding boxes, highlights the danger via AR visualization, alerts the user, and
+logs the data. If no threat is found, the system simply continues its monitoring cycle, returning to
+the capture step to ensure persistent surveillance.
+\label{end:workflow}\label{end:design}

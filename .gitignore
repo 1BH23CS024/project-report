@@ -1,9 +1,13 @@
+/.omnirush/
+/__agent__/
 *.aux
 *.bbl
 *.bcf
 *.blg
+*.fdb_latexmk
+*.fls
 *.log
-*.old
+*.out
 *.run.xml
 *.synctex.gz
-*.toc
+*.xdv

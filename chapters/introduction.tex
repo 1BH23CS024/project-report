@@ -1,87 +1,160 @@
-\chapter{INTRODUCTION}
+\chapter{INTRODUCTION}\label{ch:introduction}
 
-\section{Overview}
-Modern warfare has transitioned into an increasingly data-driven environment where split-second decisions are critical for survival and mission success. The sheer volume of visual information from surveillance feeds, drones, and tactical environments often overwhelms personnel, leading to cognitive fatigue and a higher margin for error. Manual threat assessment is no longer sufficient to ensure the safety and tactical superiority of ground units in high-stress scenarios. Consequently, there is an urgent need for intelligent, autonomous systems that can process vast amounts of real-time visual data to provide actionable insights and enhance situational awareness. \vspace{6pt}
+\section{Overview}\label{sec:overview}
+Modern warfare has transitioned into an increasingly data-driven environment where split-second
+decisions are critical for survival and mission success. The sheer volume of visual information from
+surveillance feeds, drones, and tactical environments often overwhelms personnel, leading to
+cognitive fatigue and a higher margin for error. Manual threat assessment is no longer sufficient to
+ensure the safety and tactical superiority of ground units in high-stress scenarios. Consequently,
+there is an urgent need for intelligent, autonomous systems that can process vast amounts of
+real-time visual data to provide actionable insights and enhance situational awareness. \vspace{6pt}
 
-\hspace{3em} VeerDrishti is an AI-enabled combat vision system designed to bridge this gap by providing soldiers with a persistent, intelligent observer through a camera-integrated solution. By leveraging state-of-the-art computer vision models and edge computing, the system autonomously identifies enemy combatants, vehicles, and weapons. The primary objective is to offload the mental burden of constant monitoring from the soldier, allowing them to focus on strategic execution. Developed as a lightweight solution suitable for deployment on wearable hardware, the system aims to transform how visual data is utilized on the front lines of national security. \vspace{6pt}
+VeerDrishti is an AI-enabled combat vision system designed to bridge this gap by providing soldiers
+with a persistent, intelligent observer through a camera-integrated solution. By leveraging
+state-of-the-art computer vision models and edge computing, the system autonomously identifies enemy
+combatants, vehicles, and weapons. The primary objective is to offload the mental burden of constant
+monitoring from the soldier, allowing them to focus on strategic execution. Developed as a
+lightweight solution suitable for deployment on wearable hardware, the system aims to transform how
+visual data is utilized on the front lines of national security. \vspace{6pt}
 
-\hspace{3em} The project incorporates sophisticated methodologies to ensure reliability under diverse and challenging battlefield conditions. It utilizes multimodal image fusion-combining visible and thermal spectrums to maintain high detection accuracy in low-light or obscured environments. Furthermore, by implementing edge-optimized architectures and advanced feature fusion techniques, the system achieves high-speed inference without compromising precision. This integration of versatile object detection and robust information processing ensures that the system remains a reliable asset, offering a significant technological advantage in modern combat and defense operations.
+The project incorporates sophisticated methodologies to ensure reliability under diverse and
+challenging battlefield conditions. It utilizes multimodal image fusion—combining visible and
+thermal spectrums—to maintain high detection accuracy in low-light or obscured environments.
+Furthermore, by implementing edge-optimized architectures and advanced feature fusion techniques,
+the system achieves high-speed inference without compromising precision. This integration of
+versatile object detection and robust information processing ensures that the system remains a
+reliable asset, offering a significant technological advantage in modern combat and defense
+operations.
 
-\section{Problem Statement}
-The objective is to directly address the critical challenges of managing vast and complex streams of real-time visual data in modern battlefield environments, where traditional methods of manually monitoring is slow, error-prone, and inefficient; in order to significantly enhance situational awareness and critical tactical decision-making, a sophisticated AI-powered combat vision system is proposed to automatically detect, classify, and assess various threats in real-time, effectively improving response speed and overall operational efficiency for ground units. \\
+\label{end:overview}
+\section{Problem Statement}\label{sec:problem}
+The problem statement is to address the challenges of managing vast real-time visual data in modern
+battlefield environments, where manual monitoring is slow, error-prone, and inefficient; in order to
+enhance situational awareness and tactical decision-making, an AI-powered combat vision system is
+proposed to automatically detect, classify, and assess threats in real time, improving response
+speed and operational efficiency.
 
-\textbf{Explanation:} \\
+\label{end:problem}
+\section{Motivation}\label{sec:motivation}
+The motivation for VeerDrishti is to minimize casualties and save lives by providing an intelligent,
+persistent observer in combat environments. Modern warfare involves overwhelming visual data that
+leads to cognitive fatigue, increasing the risk of fatal human error. The system serves as a
+technological safeguard, enhancing personnel safety and protecting national security forces during
+high-stress operations.
 
-\textbf{Methodology:} The system employs a hybrid deep-learning approach combining GAN-synthesized training data with edge-optimized architectures like YOLOv10 or EfficientDet. It integrates multimodal image fusion—merging RGB texture with thermal data to ensure high detection accuracy in low-light or obscured settings. \\
+\subsection{Scope}
+The scope of the project is to develop an autonomous, real-time vision system designed to detect
+enemy personnel, weapons, and vehicles in tactical environments. The technical implementation will
+focus on developing a lightweight system, optimized for localized inference on mobile edge devices.
 
-\textbf{Objective:} The system employs a hybrid deep-learning approach combining GAN synthesized training data with edge-optimized architectures like YOLOv10 or EfficientDet. It integrates multimodal image fusion—merging RGB texture with thermal data—to ensure high detection accuracy in low-light or obscured settings. \\
+\subsection{Purpose}
+The purpose of the project is to provide an autonomous, intelligent observer that delivers real-time
+situational awareness in high-stress combat environments. By automating threat detection and
+mitigating cognitive fatigue, the system serves as a technological safeguard dedicated to achieving
+the project's core mission: minimizing casualties and saving lives.
 
-\textbf{Outcome:} The project delivers an autonomous intelligent observer that provides real-time situational awareness and visual threat highlighting via an AR overlay. This architecture ensures high-speed, low-latency inference on mobile edge devices, reducing cognitive fatigue and potentially minimizing casualties.
+\subsection{Applicability}
+The project will be applicable in active combat operations, border surveillance, and high-risk
+tactical missions where ground units require instantaneous threat identification. The edge-optimized
+architecture will ensure reliability in signal-denied zones and low-visibility environments, serving
+as a critical force multiplier for national security personnel. \vspace{6pt}
 
-\section{Motivation}
-The motivation for VeerDrishti is to minimize casualties and save lives by providing an intelligent, persistent observer in combat environments. Modern warfare involves overwhelming visual data that leads to cognitive fatigue, increasing the risk of fatal human error. The system serves as a technological safeguard, enhancing personnel safety and protecting national security forces during high-stress operations. \\
+Beyond defense, the system's ability to automate hazard detection will be directly transferable to
+emergency response and disaster management, fulfilling the mandate to minimize casualties and save
+lives.
 
-\textbf{Scope:} The scope of the project is to develop an autonomous, real-time vision system designed to detect enemy personnel, weapons, and vehicles in tactical environments. The technical implementation will focus on developing a lightweight system, optimized for localized inference on mobile edge devices. \\
-
-\textbf{Purpose:} The purpose of the project is to provide an autonomous, intelligent observer that delivers real-time situational awareness in high-stress combat environments. By automating threat detection and mitigating cognitive fatigue, the system serves as a technological safeguard dedicated to achieving the project's core mission: minimizing casualties and saving lives. \\
-
-\textbf{Applicability:} The project will be applicable in active combat operations, border surveillance, and high-risk tactical missions where ground units require instantaneous threat identification. The edge-optimized architecture will ensure reliability in signal-denied zones and low-visibility environments, serving as a critical force multiplier for national security personnel. Beyond defense, the system's ability to automate hazard detection will be directly transferable to emergency response and disaster management, fulfilling the mandate to minimize casualties and save lives.
-
-\section{Objectives}
-The project's primary objectives are to develop a lightweight, real-time combat vision system that can be deployed on wearable hardware, capable of autonomously detecting and classifying threats in dynamic battlefield environments. \par
+\label{end:motivation}
+\section{Objectives}\label{sec:objectives}
+The project's primary objectives are to develop a lightweight, real-time combat vision system that
+can be deployed on wearable hardware, capable of autonomously detecting and classifying threats in
+dynamic battlefield environments. \vspace{6pt}
 
 Specific objectives for the project include:
 \begin{enumerate}[label=\roman*.]
-    \item Implement a lightweight real-time object detection model.
-    \item Enable on-screen visual highlighting of identified threats.
-    \item Optimize system performance for low latency and smooth operation.
-    \item Evaluate accuracy and response time under simulated field conditions.
+  \item Implement a lightweight real-time object detection model.
+  \item Enable on-screen visual highlighting of identified threats.
+  \item Optimize system performance for low latency and smooth operation.
+  \item Evaluate accuracy and response time under simulated field conditions.
+  \label{end:objectives}
 \end{enumerate}
+\section{Methodology}\label{sec:methodology}
+The project adopts a hybrid deep-learning approach that integrates generative data augmentation with
+edge-optimized multimodal fusion. Initially, the system utilizes a Generative Adversarial Network
+(GAN) to synthesize high-quality military training data, addressing scarcity in combat-specific
+datasets. For real-time execution, the project implements a lightweight detection architecture, such
+as EfficientDet or YOLOv10, optimized for low-latency performance on edge devices like smartphones
+or Raspberry Pi. To ensure reliability in varying field conditions, the methodology incorporates
+multimodal image fusion, specifically merging RGB texture with Infrared (thermal) edge data using a
+fine-grained region attention mechanism. This ensures robust target classification even during night
+operations or in cluttered environments. Furthermore, the system leverages a vision-language model
+(like Florence v2) for zero-shot detection, allowing the identification of "unseen" or novel threats
+through natural language supervision. Post-detection, the pipeline filters data and applies an
+Augmented Reality (AR) overlay to highlight threats instantly, while securing all mission metadata
+in a local storage layer for subsequent auditing.
 
-\section{Methodology}
-The project adopts a hybrid deep-learning approach that integrates generative data augmentation with edge-optimized multimodal fusion. Initially, the system utilizes a Generative Adversarial Network (GAN) to synthesize high-quality military training data, addressing scarcity in combat-specific datasets. For real-time execution, the project implements a lightweight detection architecture, such as EfficientDet or YOLOv10, optimized for low-latency performance on edge devices like smartphones or Raspberry Pi. To ensure reliability in varying field conditions, the methodology incorporates multimodal image fusion, specifically merging RGB texture with Infrared (thermal) edge data using a fine-grained region attention mechanism. This ensures robust target classification even during night operations or in cluttered environments. Furthermore, the system leverages a vision-language model (like Florence v2) for zero-shot detection, allowing the identification of ``unseen" or novel threats through natural language supervision. Post-detection, the pipeline filters data and applies an Augmented Reality (AR) overlay to highlight threats instantly, while securing all mission metadata in a local storage layer for subsequent auditing.
+\label{end:methodology}
+\section{Sustainable Development Goal Relevance}\label{sec:sdg}
+The project aligns with United Nations Sustainable Development Goal 16: Peace, Justice, and Strong
+Institutions.
 
-\section{Sustainable Development Goal Relevance}
-The project aligns with United Nations Sustainable Development Goal 16: Peace, Justice, and Strong Institutions. \\
+\textbf{Target 16.1: Significantly reduce all forms of violence and related death rates everywhere}
 
-\textbf{Target 16.1: Significantly reduce all forms of violence and related death rates everywhere} \vspace{3pt}
+VeerDrishti will enhance battlefield situational awareness by detecting and tracking potential
+threats in real time. This capability will enable defense personnel to respond faster and make more
+informed decisions during combat situations. By improving awareness and reaction time, the system
+will help reduce operational risks and potentially decrease casualties. \\
 
-VeerDrishti will enhance battlefield situational awareness by detecting and tracking potential threats in real-time. This capability will enable defense personnel to respond faster and make more informed decisions during combat situations. By improving awareness and reaction time, the system will help reduce operational risks and potentially decrease casualties. \\
+\textbf{Target 16.3: Promote the rule of law at the national and international levels and ensure
+  equal access to justice for all}
 
-\textbf{Target 16.3: Promote the rule of law at the national and international levels and ensure equal access to justice for all} \vspace{3pt}
+VeerDrishti will record visual data during operations, enabling improved mission analysis and
+operational review. It will support evidence-based evaluation of decisions made during missions.
+Such recorded data could also assist investigations related to violations of international
+humanitarian law, including potential war crimes. \\
 
-VeerDrishti will record visual data during operations, enabling improved mission analysis and operational review. It will support evidence-based evaluation of decisions made during missions. Such recorded data could also assist investigations related to violations of international humanitarian law, including potential war crimes. \\
+\textbf{Target 16.A: Strengthen relevant national institutions, including through international
+  cooperation, for building capacity at all levels, in particular in developing countries, to
+  prevent violence and combat terrorism and crime}
 
-\textbf{Target 16.A: Strengthen relevant national institutions, including through international cooperation, for building capacity at all levels, in particular in developing countries, to prevent violence and combat terrorism and crime} \vspace{3pt}
+VeerDrishti will integrate AI-based detection and tracking technologies, strengthening the
+technological capacity of national security institutions. The project will support peacekeeping
+operations and the protection of national interests.
 
-VeerDrishti will integrate AI-based detection and tracking technologies, strengthening the technological capacity of national security institutions. The project will support peacekeeping operations and the protection of national interests.
+\label{end:sdg}
+\section{Feasibility Study}\label{sec:feasibility}
+The feasibility of the proposed combat vision system is assessed across technical, operational, and
+economic dimensions.
 
-\section{Feasibility Study}
-The feasibility of the proposed combat vision system is assessed across technical, operational, and economic dimensions. \\
+\subsection{Technical Feasibility}
+The proposed system is technically feasible using existing smartphone hardware and computer vision
+frameworks. Modern phones provide high-resolution cameras, sufficient processing power, and GPU
+support for real-time object detection. Lightweight AI models can be optimized for edge deployment,
+enabling on-device threat detection without requiring complex external hardware.
 
-\textbf{Technical Feasibility:}
-The proposed system is technically feasible using existing smartphone hardware and computer vision frameworks. Modern phones provide high-resolution cameras, sufficient processing power, and GPU support for real-time object detection. Light weight AI models can be optimized for edge deployment, enabling on-device threat detection without requiring complex external hardware. \\
+\subsection{Operational Feasibility}
+The system can be integrated into existing helmet setups with minimal modification, using a mounted
+smartphone as both camera and display interface. It reduces cognitive load by automating threat
+detection and visual highlighting. Basic training would enable personnel to interpret AR overlays
+effectively in dynamic environments.
 
-\textbf{Operational Feasibility:}
-The system can be integrated into existing helmet setups with minimal modification, using a mounted smartphone as both camera and display interface. It reduces cognitive load by automating threat detection and visual highlighting. Basic training would enable personnel to interpret AR overlays effectively in dynamic environments. \\
+\subsection{Economic Feasibility}
+Using commercially available smartphones significantly lowers development and deployment costs
+compared to specialized military hardware. Open-source AI frameworks further reduce software
+expenses. The prototype approach minimizes initial investment, making the system cost-effective for
+research, testing, and potential scalable improvements in future versions.
 
-\textbf{Economic Feasibility:}
-Using commercially available smartphones significantly lowers development and deployment costs compared to specialized military hardware. Open-source AI frameworks further reduce software expenses. The prototype approach minimizes initial investment, making the system cost-effective for research, testing, and potential scalable improvements in future versions.
-
-\section{Work Distribution}
+\label{end:feasibility}
+\section{Work Distribution}\label{sec:work}
 \begin{table}[h]
-    \centering
-    \caption{Work Distribution Among Team Members}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|p{5cm}|p{8cm}|}
-        \hline
-        \textbf{Name}  & \textbf{Work}                           \\
-        \hline
-        Gaurav Chauhan & Literature Survey and Report Writing    \\
-        \hline
-        Gaurav Singh   & Literature Survey and Slide Preparation \\
-        \hline
-    \end{tabular}
+  \centering
+  \caption{Work Distribution Among Team Members}\label{tab:work}
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Name} & \textbf{Tasks} \\
+    \midrule
+    Gaurav Chauhan & Literature Survey and Report Writing \\
+    Gaurav Singh & Literature Survey and Slide Preparation \\
+    \bottomrule
+  \end{tabular}
 \end{table}
-
-The table 1.1 represents the work distribution between the team members for Major Project (Phase-1).
+\label{end:work}\label{end:introduction}

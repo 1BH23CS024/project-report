@@ -1,0 +1,205 @@
+% Named front-page placements.  Coordinates are PDF points from the top-left
+% of an A4 page; keeping them here preserves the approved visual layout while
+% keeping the editable section files focused on report content.
+\newcommand{\DeclareFrontLine}[5]{%
+  \expandafter\newcommand\csname front@line@#1\endcsname[1]{%
+    \FrontLineRaw{#2}{#3}{#4}{#5}{##1}%
+  }%
+}
+\newcommand{\DeclareFrontParagraph}[2]{%
+  \expandafter\newcommand\csname front@paragraph@#1\endcsname[1]{%
+    \FrontParagraphRaw{#2}{##1}%
+  }%
+}
+\newcommand{\DeclareFrontRule}[5]{%
+  \expandafter\newcommand\csname front@rule@#1\endcsname{%
+    \FrontRuleRaw{#2}{#3}{#4}{#5}%
+  }%
+}
+
+% Cover page
+\DeclareFrontLine{cover-university}{123.50}{68.88}{367.26}{15.96}
+\DeclareFrontLine{cover-address}{148.46}{102.62}{317.31}{14.04}
+\DeclareFrontLine{cover-degree-article}{302.23}{204.74}{10.14}{14.04}
+\DeclareFrontLine{cover-phase-title}{151.58}{240.86}{310.84}{18.00}
+\DeclareFrontLine{cover-on}{298.27}{266.09}{17.78}{12.00}
+\DeclareFrontLine{cover-project-title}{179.33}{294.77}{255.17}{12.00}
+\DeclareFrontLine{cover-submission}{160.46}{323.57}{292.86}{12.00}
+\DeclareFrontLine{cover-degree}{223.25}{344.09}{167.30}{12.00}
+\DeclareFrontLine{cover-in}{300.91}{364.85}{12.26}{12.00}
+\DeclareFrontLine{cover-branch}{192.17}{385.61}{229.74}{12.00}
+\DeclareFrontLine{cover-submitted-by}{272.93}{426.91}{68.78}{12.00}
+\DeclareFrontLine{cover-student-one}{180.05}{455.59}{114.26}{12.00}
+\DeclareFrontLine{cover-usn-one}{352.39}{455.59}{66.39}{12.00}
+\DeclareFrontLine{cover-student-two}{180.05}{476.35}{90.85}{12.00}
+\DeclareFrontLine{cover-usn-two}{353.95}{476.35}{66.39}{12.00}
+\DeclareFrontLine{cover-guidance}{249.41}{517.75}{115.38}{12.00}
+\DeclareFrontLine{cover-guide-name}{274.25}{538.39}{65.77}{12.00}
+\DeclareFrontLine{cover-guide-role}{246.89}{559.15}{120.87}{12.00}
+\DeclareFrontLine{cover-department}{134.78}{649.66}{344.13}{15.96}
+\DeclareFrontLine{cover-institute}{135.26}{677.14}{343.02}{15.96}
+\DeclareFrontLine{cover-accreditation}{160.10}{701.02}{296.93}{12.00}
+\DeclareFrontLine{cover-address-line}{96.50}{721.78}{423.80}{12.00}
+\DeclareFrontLine{cover-city}{225.05}{742.42}{167.06}{12.00}
+\DeclareFrontLine{cover-year}{278.57}{762.82}{60.02}{12.00}
+
+% Certificate page
+\DeclareFrontRule{certificate-department-rule}{131.54}{175.82}{480.21}{177.02}
+\DeclareFrontLine{certificate-department}{131.54}{174.50}{348.63}{12}
+\DeclareFrontLine{certificate-heading}{259.01}{210.98}{96.37}{14.04}
+\DeclareFrontParagraph{certificate-body}{233.18}
+\DeclareFrontRule{certificate-guide-rule}{97.82}{456.31}{301.87}{456.79}
+\DeclareFrontRule{certificate-coordinator-rule}{317.59}{456.31}{515.64}{456.79}
+\DeclareFrontLine{certificate-guide-name}{167.06}{474.91}{65.78}{12}
+\DeclareFrontLine{certificate-coordinator-name}{372.79}{474.91}{87.75}{12}
+\DeclareFrontLine{certificate-guide-role}{138.50}{495.19}{122.72}{12}
+\DeclareFrontLine{certificate-coordinator-role}{341.23}{495.19}{150.67}{12}
+\DeclareFrontLine{certificate-guide-department}{168.02}{515.23}{63.76}{12}
+\DeclareFrontLine{certificate-coordinator-department}{384.79}{515.23}{63.88}{12}
+\DeclareFrontRule{certificate-hod-rule}{96.38}{580.51}{306.43}{580.99}
+\DeclareFrontRule{certificate-principal-rule}{319.15}{580.51}{517.20}{580.99}
+\DeclareFrontLine{certificate-hod-name}{130.46}{599.14}{141.97}{12}
+\DeclareFrontLine{certificate-principal-name}{378.31}{599.14}{80.07}{12}
+\DeclareFrontLine{certificate-hod-role}{158.90}{619.42}{85.11}{12}
+\DeclareFrontLine{certificate-principal-role}{397.03}{619.42}{42.46}{12}
+\DeclareFrontLine{certificate-hod-department}{169.61}{639.34}{63.73}{12}
+
+% Declaration page
+\DeclareFrontRule{declaration-department-rule}{132.62}{199.10}{481.29}{200.30}
+\DeclareFrontLine{declaration-department}{132.62}{197.78}{348.63}{12}
+\DeclareFrontLine{declaration-heading}{254.21}{227.42}{104.11}{14.04}
+\DeclareFrontParagraph{declaration-body}{249.62}
+\DeclareFrontRule{declaration-date-rule}{119.06}{568.27}{181.60}{568.87}
+\DeclareFrontLine{declaration-date}{90.02}{566.95}{25.92}{12}
+\DeclareFrontLine{declaration-place}{90.02}{587.71}{81.12}{12}
+\DeclareFrontLine{declaration-student-heading}{92.90}{669.94}{72.28}{12}
+\DeclareFrontLine{declaration-usn-heading}{296.23}{669.94}{23.54}{12}
+\DeclareFrontLine{declaration-signature-heading}{421.54}{669.94}{49.13}{12}
+\DeclareFrontLine{declaration-student-one}{92.90}{690.70}{117.61}{12}
+\DeclareFrontLine{declaration-usn-one}{296.23}{690.70}{67.68}{12}
+\DeclareFrontLine{declaration-signature-one}{421.54}{690.70}{89.15}{12}
+\DeclareFrontLine{declaration-student-two}{92.90}{711.22}{94.27}{12}
+\DeclareFrontLine{declaration-usn-two}{296.23}{711.22}{67.68}{12}
+\DeclareFrontLine{declaration-signature-two}{421.54}{711.22}{89.15}{12}
+
+% Acknowledgement and abstract pages
+\DeclareFrontLine{acknowledgement-heading}{206.81}{86.90}{200.48}{18}
+\DeclareFrontParagraph{acknowledgement-body}{112.10}
+\DeclareFrontLine{acknowledgement-student-one}{259.01}{584.23}{113.06}{12}
+\DeclareFrontLine{acknowledgement-usn-one}{443.38}{584.23}{67.68}{12}
+\DeclareFrontLine{acknowledgement-student-two}{259.01}{604.78}{93.10}{12}
+\DeclareFrontLine{acknowledgement-usn-two}{443.26}{604.78}{67.68}{12}
+\DeclareFrontLine{abstract-heading}{258.53}{70.92}{97.18}{18}
+\DeclareFrontParagraph{abstract-body}{97.94}
+
+% Institute page
+\DeclareFrontLine{institute-heading}{184.73}{178.58}{242.99}{12}
+\DeclareFrontLine{institute-name}{182.33}{212.54}{247.88}{12}
+\DeclareFrontLine{institute-vision-heading}{285.31}{246.50}{42.14}{12}
+\DeclareFrontParagraph{institute-vision-body}{270.53}
+\DeclareFrontLine{institute-mission-heading}{285.55}{310.25}{51.38}{12}
+\DeclareFrontParagraph{institute-mission-body}{334.13}
+
+% Program page
+\DeclareFrontLine{program-heading}{186.65}{174.98}{240.63}{12}
+\DeclareFrontLine{program-name}{185.57}{198.98}{242.85}{12}
+\DeclareFrontLine{program-vision-heading}{286.03}{222.98}{42.14}{12}
+\DeclareFrontParagraph{program-vision-body}{246.86}
+\DeclareFrontLine{program-mission-heading}{281.57}{302.81}{51.38}{12}
+\DeclareFrontParagraph{program-mission-body}{326.81}
+\DeclareFrontLine{program-peo-heading}{190.97}{452.35}{232.29}{12}
+\DeclareFrontParagraph{program-peo-body}{476.35}
+
+% Programme outcomes pages
+\DeclareFrontLine{outcomes-heading}{250.49}{155.06}{133.53}{12}
+\DeclareFrontParagraph{outcomes-body}{179.06}
+
+% Programme-specific outcomes page
+\DeclareFrontLine{specific-outcomes-heading}{209.69}{179.66}{194.01}{12}
+\DeclareFrontParagraph{specific-outcomes-body}{215.42}
+
+% Contents, figure-list and table-list pages
+\DeclareFrontLine{contents-index-heading}{281.23}{68.04}{0}{15.96}
+\DeclareFrontLine{contents-acknowledgement}{95.90}{92.42}{0}{12}
+\DeclareFrontLine{contents-abstract}{95.90}{116.42}{0}{12}
+\DeclareFrontLine{contents-institute}{95.90}{140.18}{0}{12}
+\DeclareFrontLine{contents-program}{95.90}{164.06}{0}{12}
+\DeclareFrontLine{contents-outcomes}{95.90}{187.94}{0}{12}
+\DeclareFrontLine{contents-specific-outcomes}{95.90}{211.82}{0}{12}
+\DeclareFrontLine{contents-table-of-contents}{95.90}{235.70}{0}{12}
+\DeclareFrontLine{contents-figures}{95.90}{259.61}{0}{12}
+\DeclareFrontLine{contents-tables}{95.90}{283.49}{0}{12}
+\DeclareFrontLine{contents-acknowledgement-page}{466.66}{92.42}{32}{12}
+\DeclareFrontLine{contents-abstract-page}{466.66}{116.42}{32}{12}
+\DeclareFrontLine{contents-institute-page}{466.66}{140.18}{32}{12}
+\DeclareFrontLine{contents-program-page}{466.66}{164.06}{32}{12}
+\DeclareFrontLine{contents-outcomes-page}{466.66}{187.94}{32}{12}
+\DeclareFrontLine{contents-specific-outcomes-page}{466.66}{211.82}{32}{12}
+\DeclareFrontLine{contents-table-of-contents-page}{466.66}{235.70}{32}{12}
+\DeclareFrontLine{contents-figures-page}{466.66}{259.61}{32}{12}
+\DeclareFrontLine{contents-tables-page}{466.66}{283.49}{32}{12}
+\DeclareFrontRule{contents-divider}{88.55}{322.03}{524.82}{323.47}
+\DeclareFrontLine{contents-body-heading}{222.65}{359.09}{0}{15.96}
+\DeclareFrontLine{contents-chapter-label}{95.90}{385.49}{0}{14.04}
+\DeclareFrontLine{contents-number-label}{95.90}{409.61}{0}{14.04}
+\DeclareFrontLine{contents-chapters-label}{263.09}{397.61}{0}{14.04}
+\DeclareFrontLine{contents-page-label}{456.22}{397.61}{0}{14.04}
+\DeclareFrontLine{contents-references}{164.78}{394.01}{0}{12}
+\DeclareFrontLine{contents-references-page}{456.34}{394.01}{30}{12}
+
+\newcommand{\DeclareContentsRow}[2]{%
+  \expandafter\newcommand\csname contents@y@#1\endcsname{#2}%
+}
+\newcommand{\ContentsY}[1]{\csname contents@y@#1\endcsname}
+\DeclareContentsRow{introduction}{435.67}
+\DeclareContentsRow{overview}{459.55}
+\DeclareContentsRow{problem}{483.43}
+\DeclareContentsRow{motivation}{507.31}
+\DeclareContentsRow{objectives}{531.19}
+\DeclareContentsRow{methodology}{554.95}
+\DeclareContentsRow{sdg}{578.95}
+\DeclareContentsRow{feasibility}{602.74}
+\DeclareContentsRow{work}{626.74}
+\DeclareContentsRow{literature}{650.50}
+\DeclareContentsRow{base}{674.38}
+\DeclareContentsRow{supplementary}{698.26}
+\DeclareContentsRow{comparison}{78.24}
+\DeclareContentsRow{requirements}{102.38}
+\DeclareContentsRow{functional}{126.14}
+\DeclareContentsRow{nonfunctional}{151.22}
+\DeclareContentsRow{hardware}{176.42}
+\DeclareContentsRow{software}{200.42}
+\DeclareContentsRow{design}{224.18}
+\DeclareContentsRow{architecture}{248.09}
+\DeclareContentsRow{workflow}{271.97}
+\DeclareContentsRow{scheduling}{296.33}
+\DeclareContentsRow{gantt}{320.81}
+\DeclareContentsRow{progress}{345.17}
+\DeclareContentsRow{conclusion}{369.53}
+
+% Figure list
+\DeclareFrontLine{figures-heading}{256.73}{135.26}{0}{14.04}
+\DeclareFrontLine{figures-number-label}{116.06}{165.02}{0}{12}
+\DeclareFrontLine{figures-title-label}{273.77}{165.02}{0}{12}
+\DeclareFrontLine{figures-page-label}{465.22}{165.02}{0}{12}
+\DeclareFrontLine{figures-architecture-number}{128.78}{192.14}{0}{12}
+\DeclareFrontLine{figures-architecture-title}{185.57}{192.14}{0}{12}
+\DeclareFrontLine{figures-architecture-page}{481.78}{192.14}{0}{12}
+\DeclareFrontLine{figures-workflow-number}{128.78}{214.58}{0}{12}
+\DeclareFrontLine{figures-workflow-title}{185.57}{214.58}{0}{12}
+\DeclareFrontLine{figures-workflow-page}{481.78}{214.58}{0}{12}
+\DeclareFrontLine{figures-gantt-number}{128.78}{239.30}{0}{12}
+\DeclareFrontLine{figures-gantt-title}{185.57}{239.30}{0}{12}
+\DeclareFrontLine{figures-gantt-page}{481.78}{239.30}{0}{12}
+
+% Table list
+\DeclareFrontLine{tables-heading}{253.49}{126.62}{0}{14.04}
+\DeclareFrontLine{tables-number-label}{104.90}{156.26}{0}{12}
+\DeclareFrontLine{tables-title-label}{265.85}{156.26}{0}{12}
+\DeclareFrontLine{tables-page-label}{457.66}{156.26}{0}{12}
+\DeclareFrontLine{tables-work-number}{121.82}{183.38}{0}{12}
+\DeclareFrontLine{tables-work-title}{178.61}{183.38}{0}{12}
+\DeclareFrontLine{tables-work-page}{477.22}{183.38}{0}{12}
+\DeclareFrontLine{tables-comparison-number}{121.82}{205.94}{0}{12}
+\DeclareFrontLine{tables-comparison-title}{178.61}{205.94}{0}{12}
+\DeclareFrontLine{tables-comparison-page}{466.30}{205.94}{0}{12}
